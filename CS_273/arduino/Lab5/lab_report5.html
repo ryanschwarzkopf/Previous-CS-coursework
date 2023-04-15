@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1> Lab Number and Title: Lab5, LED display</h1>
+ 
+
+<h2> Student Name: Ryan Schwarzkopf </h2>
+ 
+
+<h2> Date: Nov 10, 2022 </h2>
+
+
+<h3> Purpose of Lab </h3>
+
+<p> The purpose for this lab was to practice witing assembly language. Some new advanced assembly concepts we practiced including directives, register indirect addressing, look up tables using .DB, and bit addressability. We also practiced software design and debugging in C and assembly. </p>
+ 
+
+<h3> Description of Solution(s) </h3>
+
+<p> The solution for this lab was to have a look up table for the appropriate LED and digit values to send to the LED board. For each digit you will call the assembly code for that digit, and the assembly will iterate x number of times through the table and output that value to the LED board. </p>
+ 
+
+<h3> Test Results </h3>
+
+<p> I would test the hardware first by running the given C code. After my hardware is set, I would check the digit iterator in assembly and write out the digit value using the C code. Then after the digit values are in the correct digit placement, I work on the digit value assembly code. </p>
+
+
+
+<h3> Discussion </h3>
+
+<p> I did enjoy this lab, it was pretty clear what implementation was needed to solve the problem, and the code given in C was very useful for debugging. It was nice that I didn't have to write that myself. </p>
+
+ 
+
+<h3> Contribution to Team Work </h3>
+
+<p> I worked on my own. The implementation I planned at the beginning didn't end up changing. The most time consuming part of this lab was figuring out how to debug it. I had bugs in both my digit calculation and digit value calculation. I ended up fooling around with my loop values because everything was off by one value. (EX: 1 printed 2, 2 printed 3, etc.) So I had to fix that, and I also had some issues with the port B value with the set bit and clear bit branches. </p>
+
+</body>
+</html>

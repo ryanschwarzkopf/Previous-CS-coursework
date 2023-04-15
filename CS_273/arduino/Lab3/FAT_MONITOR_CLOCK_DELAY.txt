@@ -1,0 +1,39 @@
+output:
+  ldi r22, 6
+  sts TCCR1A, r1
+  ret
+delay_time:
+  ldi r20, 0x7C
+  sts TCNT1L, r20
+  ldi r20, 0xE1
+  sts TCNT1H, r21
+  ldi r20, 0x05
+  sts TCCR1B, r20
+  ret
+timer:
+  lds r20, TIFR1
+  sbrs r20, 0
+  jmp timer
+  ldi r20, 0x01
+  sts TIFR1, r20
+  jmp lightAllON
+  dec r22
+  brne delay_time        ;ldi ret_lo, lo8(ERROR_NONE)
+  jmp lightAllOFF   ;ldi ret_hi, hi8(ERROR_NONE)
+  ret
+
+
+S
+
+lightAllON:
+  ldi r18, 0b00110001
+  out 0x04, r18 ;0x04 is I/O for DDRB
+  out 0x05, r18 ;0x05 is I/O for PORTB
+  jmp output
+  ret
+lightAllOFF:
+  ldi r18, 0b00000000
+  out 0x04, r18
+  out 0x05, r18
+  jmp output
+  ret

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1> Lab Number and Title: Lab 6 Sensing the light </h1>
+ 
+
+<h2> Student Name: Ryan Schwarzkopf </h2>
+ 
+
+<h2> Date: December 4, 2022 </h2>
+
+
+<h3> Purpose of Lab </h3>
+
+<p> The purpose of this lab was to learn analog to digital conversion, timers/counters, and interrupts with an arduino board. In the lab  we read input from a photoresistor once a second and displayed it on a screen.</p>
+
+ 
+
+<h3> Description of Solution(s) </h3>
+
+<p> The structure of the program was: A setup and an infinite loop both written in C. The setup function calls a Serial.setup() which is prewritten and then calls initSensor() which I needed to implement in assembly. InitSensor sets up the analog to digital conversion in the avr for the case that we needed to read from the photosensor. Then after initSensor finishes loop() is immediately called. Loop initializes a byte variable and defines it with readSensor(2). ReadSensor(2) takes in the port number and runs one adc conversion and returns the value read. Loop then prints out the byte and calls waitOneSecond(). WaitOneSecond sets up a counter in assembly and counts for one second and returns void. Then loop runs again infinitely. All of the assembly was written by me. Declarations for the assembly functions were written by me. The C functions setup() and loop() were not written by me.</p>
+
+ 
+
+<h3> Test Results </h3>
+
+<p> I implemented all of the functions before I tested anything. I only ran into one bug and that was that my waitOneSecond was not waiting the correct amount of time. The loop() was reading and printing very fast. My bug was that I set up the timer for normal mode, but I initialized the OCR1A/B instead of the TCNT1. After I fixed that it worked good. </p>
+
+
+
+<h3> Discussion </h3>
+
+<p> I'm very glad that we were able to read input this semester. I felt like this lab was a good capstone because we were required to implement almost the entire program ourselves. It was fun looking for the addresses for the correct registers in the manual and implementing everything together. I feel like this was a good last lab because it felt like a real world scenario and like this is what an embedded developer would actually be doing. That brought a nice sense of accomplishment for me. </p>
+
+ 
+
+<h3> Contribution to Team Work </h3>
+
+<p> The lab was individual and I implemented the assembly code. I had help from the lab video for setting up the adc functions. I also had the professor help me debug my code. </p>
+
+<h3> References </h3>
+
+<p> AVR 328p datasheet: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf </p>
+<p> Addresses: https://github.com/DarkSector/AVR/blob/master/asm/include/m328Pdef.inc </p>
+
+</body>
+</html>

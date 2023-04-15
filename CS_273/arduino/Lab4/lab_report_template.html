@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1> Lab Number and Title: Lab 4: Decoding the Morse Code</h1>
+ 
+
+<h2> Student Name: Ryan Schwarzkopf </h2>
+ 
+
+<h2> Date: October 16, 2022 </h2>
+
+
+<h3> Purpose of Lab </h3>
+
+<p> The purpose of this lab was to practice: using the stack via call/ret, global variables, C and assembly programming, arrays in asseembly, program design, and debugging. </p>
+
+ 
+
+<h3> Description of Solution(s) </h3>
+
+<p> Eureka: This problem was done in assembly. For this problem I made a method for a dot, and a dash, a letter delay, a space delay, as well as start and stop methods. I found the time that each of these should take on a wikipedia page and implemented using the delay function. Then I made a function to call the different methods appropriately to spell out "Eureka".</p>
+<a href="https://en.wikipedia.org/wiki/Morse_code">wikipedia</a>
+<p>MorseCode: In the assembly part I iterated through the tables and checked the values. If val and width were the same then return the ascii value. If the entire table was checked, then return a 0. I just used branches and cp/cpi to test these cases.</p>
+<p>Lab4: In the decodeMorse C function I needed to parse the input string and add the value to the global val. I did that by reading one digit at a time and multiplying/adding as necessary to get the correct binary value of the string. After a space or newline I called my assembly function to get back the ascii. I put that into the message variable.</p>
+
+<h3> Test Results </h3>
+
+<p> For the Eureka I had no input values. I ran the code and the light blinked correctly. For the MorseCode/decodeMorse I used the given values "1000 100 0" and expected to get BDE. Once this worked I tested it out with my name and my friends name in morse code and it worked.</p>
+
+
+
+<h3> Discussion </h3>
+
+<p> This lab was nice because there were parts that were easy for me and just good practice and there were other parts that I struggled on. My algorithm for parsing the binary string to decimal value was difficult and I rewrote new algorithms many times. I also learned how to iterate through an array in assembly and how the byte type is used in C to communicate with assembly.</p>
+
+ 
+
+<h3> Contribution to Team Work </h3>
+
+<p> The lab was an individual project. I spent little effort implementing the Eureka. I just jotted down the general methods I needed and I knew already how to build all of them. The MorseCode and decode_morse I initially tried to do without the video tutorial, but I needed to watch it and implement the way that he did it. </p>
+
+<h3> References </h3>
+
+<a href="https://en.wikipedia.org/wiki/Morse_code">https://en.wikipedia.org/wiki/Morse_code</a>
+
+</body>
+</html>

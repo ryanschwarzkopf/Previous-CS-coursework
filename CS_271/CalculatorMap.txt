@@ -1,0 +1,15 @@
+main{
+ calculate{
+  cout: > 
+  token t = t.get() // fills token struct
+  if(t=p) : t.get     ??
+  if(t=q) : return;
+  ts.unget(){
+   removes buffer
+  cout: result, statement()
+ }
+}
+
+main(): calculate
+calculate(): ts.get, statement
+ts.get(): Token(ch), cin.unget(), isalpha(ch), isdigit(ch)

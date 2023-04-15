@@ -1,0 +1,38 @@
+if female {
+	if age < 39 {
+		if f% < 21
+		if f% < 33
+		if f% < 39
+		else(very high)...
+	}
+	if age < 59 {
+		if f% < 23
+		if f% < 34
+		if f% < 40
+		else(very high)...
+	}
+	if age < 79 {
+		if f% < 24
+		if f% < 36
+		if f% < 42
+		else(very high)...
+}
+else (male) {
+	if age < 39 {
+		if f% < 8
+		if f% < 20
+		if f% < 25
+		else(very high)...
+	}
+	if age < 59 {
+		if f% < 11
+		if f% < 22
+		if f% < 28
+		else(very high)...
+	}
+	if age < 79 {
+		if f% < 13
+		if f% < 25
+		if f% < 30
+		else(very high)...
+}

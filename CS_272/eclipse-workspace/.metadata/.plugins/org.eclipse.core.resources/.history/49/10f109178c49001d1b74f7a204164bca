@@ -1,0 +1,8 @@
+package Lab6;
+
+public class DoublyLinkedListDummy {
+	private IntNode head;
+	private IntNode tail;
+	
+	
+}
